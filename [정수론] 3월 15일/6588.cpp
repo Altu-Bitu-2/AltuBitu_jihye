@@ -19,17 +19,13 @@ void primeVector() {    // 소수 배열 생성
 }
 
 void findOddPrimeSum(int n) {
-    int val = false;
     for (int i = 3; i < n; i += 2) { // 홀수인 소수 탐색
         if (arr[i] && arr[n - i]) {
             cout << n << " = " << i << " + " << n - i << '\n';
-            val = true;
             return;
         }
     }
-    if (!val) {
-        cout << "Goldbach's conjecture is wrong.\n";
-    }
+    cout << "Goldbach's conjecture is wrong.\n";
 }
 
 int main() {
