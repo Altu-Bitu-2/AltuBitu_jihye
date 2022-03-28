@@ -11,38 +11,33 @@ int main() {
 
 	int m, x;
 	string str;
-	vector<bool> v(20, 0);
+	vector<bool> v(21, 0);
 	cin >> m;
 	while (m--) {
 		cin >> str;
 		if (str == "add") {
 			cin >> x;
-			v[x - 1] = true;
+			v[x] = true;
 		}
 		if (str == "remove") {
 			cin >> x;
-			v[x - 1] = false;
+			v[x] = false;
 		}
 		if (str == "check") {
 			cin >> x;
-			cout << v[x - 1] << '\n';
+			cout << v[x] << '\n';
 		}
 		if (str == "toggle") {
 			cin >> x;
-			if (v[x - 1]) {
-				v[x - 1] = false;
-			}
-			else {
-				v[x - 1] = true;
-			}
+			v[x] = !v[x];
 		}
 		if (str == "all") {
-			for (int i = 0; i < 20; i++) {
+			for (int i = 1; i < 21; i++) {
 				v[i] = true;
 			}
 		}
 		if (str == "empty") {
-			for (int i = 0; i < 20; i++) {
+			for (int i = 1; i < 21; i++) {
 				v[i] = false;
 			}
 		}

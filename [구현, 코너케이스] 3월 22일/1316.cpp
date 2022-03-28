@@ -8,14 +8,11 @@ bool isGroup(string s) {
 	vector<bool> ch(26, 0);
 	if (s.size() == 1) return true;
 	for (int i = 0; i < s.size(); i++) {
-		if (ch[s[i] - 97]) {
+		if (ch[s[i] - 'A']) {
 			return false;
 		}
-		if (s[i] == s[i+1]) {
-			continue;
-		}
-		else {
-			ch[s[i] - 97] = true;
+		if (s[i] != s[i+1]) {
+			ch[s[i] - 'A'] = true;
 		}
 	}
 	return true;

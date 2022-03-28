@@ -9,20 +9,12 @@ int main() {
 	cin >> t;
 	while (t--) {
 		cin >> a >> b;
-		vector<int> v;
-		v.push_back(1);
-		for (int i = 1; i < 5; i++) {
-			num = (int)pow(a, i) % 10;
-			if (num == 0) {
-				num = 10;
-			}
-			v.push_back(num);
-		}
-		if (b == 0) {
-			cout << "1\n";
-		}
+		b %= 4;
+		if (b == 0) b = 4;
+		num = (int)pow(a, b) % 10;
+		if (num == 0) cout << "10\n";
 		else {
-			cout << v[b % 4] << '\n';
+			cout << num << '\n';
 		}
 	}
 	return 0;
